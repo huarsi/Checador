@@ -11,21 +11,20 @@ export const Boton = () => {
     <div>
     <Navbar bg='dark' variant='dark'>
       <Container>
-        <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
+        <Navbar.Brand href="#home">Checador chido</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            Signed in as: <a href="#login">Mark Otto</a>
+            Usuario: <a href="#login" style={{color: 'blueviolet'}}>Mark Otto</a>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>
     </Navbar>
     </div>
 
-    <div className='div-oscuro'>
-        <button onClick={handleClick}>Aplastame</button>
-        <Button>Aplastame</Button>
-    </div>
+    <div className="d-flex justify-content-center align-items-center">
+      <Button onClick={handleClick}> Aplastame </Button>
+      </div>
     </>
   )
 }

@@ -1,11 +1,17 @@
 import React from 'react';
-import { Button,Navbar,Container } from 'react-bootstrap'
+import { useState } from 'react'
+import { Button,Navbar,Container } from 'react-bootstrap';
+import {FormularioLogin} from './FormularioLogin'
+import {Home} from './Home'
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const Boton = () => {
     const handleClick = () =>{
         alert('Botón clickeado')
     }
+    const [user, setUser] = useState([]);
+
   return (
     <>
     <div>
@@ -22,9 +28,19 @@ export const Boton = () => {
     </Navbar>
     </div>
 
-    <div className="d-flex justify-content-center align-items-center">
+    {/* <div style = {{display:'flex', justifyContent:'center',alignItems:'center',height: '100vh'}}>
       <Button onClick={handleClick}> Aplastame </Button>
-      </div>
+      </div> */}
+
+      {
+        !user.length > 0 
+        ? <FormularioLogin setUser={setUser} />
+        : <Home user={user}n setUser={setUser} />
+
+      }
+    {/* <FormularioLogin setUser={setUser} />  
+    <Home /> */}
     </>
+    
   )
 }
